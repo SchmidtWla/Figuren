@@ -10,6 +10,8 @@ public class Kreiskegel extends Pyramide{
 
     @Override
     public double mantelflaeche() {
-        this.getGrundflaeche().
+        Kreis kreis = (Kreis)this.getGrundflaeche();
+        double seitenlaenge = Math.sqrt((Math.pow(getHoehe(),2) + Math.pow(kreis.getRadius(),2)));
+        return kreis.getRadius() * seitenlaenge * Math.PI;
     }
 }
