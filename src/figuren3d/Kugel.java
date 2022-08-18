@@ -19,6 +19,6 @@ public class Kugel extends Figur3D {
 
     @Override
     public double volumen() {
-        return 4/3 * Math.PI * Math.pow(radius, 3);
+        return 4/3.0 * Math.PI * Math.pow(radius, 3);
     }
 }
