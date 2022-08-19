@@ -2,12 +2,12 @@ package figuren3d;
 
 import figuren2d.Figur2D;
 
-public abstract class Pyramide extends Figur3D{
+public abstract class Pyramide<T extends Figur2D> extends Figur3D {
 
     private double hoehe;
-    private Figur2D grundflaeche;
+    private T grundflaeche;
 
-    public Pyramide(Figur2D grund, double hoehe) {
+    public Pyramide(T grund, double hoehe) {
         this.grundflaeche = grund;
         this.hoehe = hoehe;
     }
@@ -17,14 +17,18 @@ public abstract class Pyramide extends Figur3D{
     }
 
     public void setHoehe(double hoehe) {
-        this.hoehe = hoehe;
+        if (hoehe > 0) {
+            this.hoehe = hoehe;
+        } else {
+            throw new IllegalArgumentException("The height must be greater than 0 ");
+        }
     }
 
-    public Figur2D getGrundflaeche() {
+    public T getGrundflaeche() {
         return grundflaeche;
     }
 
-    public void setGrundflaeche(Figur2D grundflaeche) {
+    public void setGrundflaeche(T grundflaeche) {
         this.grundflaeche = grundflaeche;
     }
 
