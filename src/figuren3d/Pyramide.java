@@ -37,6 +37,6 @@ public abstract class Pyramide extends Figur3D{
 
     @Override
     public double volumen() {
-        return (this.grundflaeche.flaeche() * this.hoehe) / 3;
+        return (this.grundflaeche.flaeche() * this.hoehe) / 3.0;
     }
 }
