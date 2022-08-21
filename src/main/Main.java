@@ -10,20 +10,18 @@ import figuren3d.RegelmaessigePyramide;
 
 public class Main {
 
-    public static void main (String[] args) {
-        Hexagon hex = new Hexagon(5);
+    public static void main(String[] args) {
+
         Kreis kreis = new Kreis(5);
         Kreiskegel kreiskegel = new Kreiskegel(kreis, 15);
-        System.out.println(kreiskegel.volumen());
-        System.out.println(kreiskegel.oberflaeche());
+        System.out.println("Kreiskegel: " + "\n" + kreiskegel.toString() + "\n");
 
-        Dreieck dreieck = new Dreieck(5,5,5);
+        Dreieck dreieck = new Dreieck(5, 5, 5);
         DreiseitigePyramide dreiseitigePyramide = new DreiseitigePyramide(dreieck, 6);
-        System.out.println(dreiseitigePyramide.oberflaeche());
+        System.out.println("DreiseitigePyramide: " + "\n" + dreiseitigePyramide.toString() + "\n");
 
-        N_Eck n_eck = new N_Eck(5, 3);
+        N_Eck n_eck = new N_Eck(5, 4);
         RegelmaessigePyramide pyramide = new RegelmaessigePyramide(n_eck, 6);
-        System.out.println(pyramide.oberflaeche());
-        System.out.println(pyramide.volumen());
+        System.out.println("RegelmaessigePyramide: " + "\n" + pyramide.toString() + "\n");
     }
 }

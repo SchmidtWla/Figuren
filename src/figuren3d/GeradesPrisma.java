@@ -25,7 +25,11 @@ public class GeradesPrisma extends Figur3D {
     }
 
     public void setHoehe(double hoehe) {
-        this.hoehe = hoehe;
+       if(hoehe > 0 ) {
+           this.hoehe = hoehe;
+       } else {
+           throw new IllegalArgumentException("Height must be greater than 0");
+       }
     }
 
     @Override

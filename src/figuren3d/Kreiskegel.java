@@ -2,7 +2,7 @@ package figuren3d;
 
 import figuren2d.Kreis;
 
-public class Kreiskegel extends Pyramide{
+public class Kreiskegel extends Pyramide<Kreis>{
 
     public Kreiskegel(Kreis grund, double hoehe) {
         super(grund, hoehe);
@@ -10,8 +10,8 @@ public class Kreiskegel extends Pyramide{
 
     @Override
     public double mantelflaeche() {
-        Kreis kreis = (Kreis)this.getGrundflaeche();
-        double seitenlaenge = Math.sqrt((Math.pow(getHoehe(),2) + Math.pow(kreis.getRadius(),2)));
-        return kreis.getRadius() * seitenlaenge * Math.PI;
+
+        double seitenlaenge = Math.sqrt((Math.pow(getHoehe(),2) + Math.pow(this.getGrundflaeche().getRadius(),2)));
+        return this.getGrundflaeche().getRadius() * seitenlaenge * Math.PI;
     }
 }
